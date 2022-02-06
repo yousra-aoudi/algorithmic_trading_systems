@@ -106,7 +106,8 @@ class TestTradingSimulation(unittest.TestCase):
     ts = TradingStrategy(ob_2_ts, ts_2_om, om_2_ts)
     ms = MarketSimulator(om_2_gw, gw_2_om)
     om = OrderManager(ts_2_om, om_2_ts, om_2_gw, gw_2_om)
-		lp.read_tick_data_from_data_source() while len(lp_2_gateway)>0:
+		lp.read_tick_data_from_data_source() 
+		while len(lp_2_gateway)>0:
 			ob.handle_order_from_gateway()
 			ts.handle_input_from_bb()
 			om.handle_input_from_ts()
