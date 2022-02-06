@@ -20,3 +20,5 @@ print(realtime.getTime())
 # It will return the date/time when you run this code
 simulatedtime=SimulatedRealClock(simulated=True)
 simulatedtime.process_order({'id' : 1, 'timestamp' : '2018-06-29 08:15:27.243860'})
+print(simulatedtime.getTime())
+# It will return 2018-06-29 08:15:27.243860
