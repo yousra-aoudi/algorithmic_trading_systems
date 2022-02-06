@@ -52,4 +52,21 @@ class OMS:
 	
 	def onTimeOut(self):
 		print('Order Timeout Please Take Action')
+
+		
+if __name__ == '__main__':
+	print('case 1: real time')
+	simulated_real_clock=SimulatedRealClock()
+	oms=OMS(simulated_real_clock)
+	oms.send_order()
+	for i in range(10):
+		print('do something else: %d' % (i))
+    sleep(1)
   
+	print('case 2: simulated time')
+  simulated_real_clock=SimulatedRealClock(simulated=True)
+  simulated_real_clock.process_order({'id' : 1,'timestamp' : '2018-06-29 08:15:27.243860'})
+  oms = OMS(simulated_real_clock)
+  oms.send_order()
+  simulated_real_clock. process_order({'id': 1,'timestamp': '2018-06-29 08:21:27.243860'})
+
